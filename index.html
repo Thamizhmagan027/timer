@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Tamil{
+            position: absolute;
+            background-color: rgb(68, 68, 224);
+            border: 2px solid blue;
+            border-radius: 100%;
+            padding: 20px;
+            height:380px ;
+            text-align: center;
+            left: 540px;
+            top: 20%;
+        }
+        .Tamil span{
+            font-size: 80px;
+            color: white;
+            position: relative;
+            top: 150px;
+
+            
+        }
+        body{
+            background-image: linear-gradient(orange,white,green);
+            background-repeat: no-repeat;
+            height: 650px;
+        }
+        h1{
+            margin-left: 400px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1><span style="color: red;">&#129321</span> Happy Independence Day !<span>&#129321</span></h1>
+    
+        <div class="Tamil">
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="mins">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+
+            <span id="ampm">AM</span>
+        </div>
+    <script>
+    document.getElementById('ampm')     
+function Time(){
+    let dateTime = new Date();
+    let hr = dateTime.getHours();
+    let min =addzero( dateTime.getMinutes());
+    let sec = addzero(dateTime.getSeconds()); 
+    if(hr>12){
+    hr=hr-12 
+    ampm.innerHTML='PM'
+    }
+   
+    document.getElementById('hours').innerHTML = addzero(hr);
+    document.getElementById('mins').innerHTML = min;
+    document.getElementById('seconds').innerHTML = sec;    
+}
+function addzero(num){
+return num<10?"0"+num:num
+}
+
+
+setInterval(Time, 100)
+    </script>
+</body>
+</html>
